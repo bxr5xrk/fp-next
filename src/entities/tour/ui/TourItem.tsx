@@ -1,4 +1,7 @@
+'use client'
+
 import { formatDate } from '@/shared/lib/formatDate';
+import { smoothScroll } from '@/shared/lib/smoothScroll';
 import Badge from '@/shared/ui/Badge/Badge';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,7 +28,7 @@ export default function TourItem({
 }: ToursItemProps) {
   return (
     <li className="group grid">
-      <Link href={`/${id}`}>
+      <Link onClick={smoothScroll} href={`/${id}`}>
         <div className="relative block h-48 w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-primary-700 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Image
             priority

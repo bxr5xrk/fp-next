@@ -1,6 +1,9 @@
+'use client';
+
 import { Calendar, Tour } from '@/entities/tour';
 import { useTours } from '@/entities/tour/api/useTours';
 import { formatDate } from '@/shared/lib';
+import { smoothScroll } from '@/shared/lib/smoothScroll';
 import Link from 'next/link';
 import { groupEventsByMonth } from '../lib/groupEventsByMonth';
 
@@ -27,6 +30,11 @@ export default async function List({ handleClick }: ListProps) {
 
   const calendarConfig = getCalendarConfig(tours);
 
+  const onClickTour = (id: Pick<Tour, 'id'>['id']) => {
+    handleClick(id);
+    smoothScroll();
+  };
+
   return (
     <ul className="flex flex-col divide-y overflow-hidden">
       {Object.keys(calendarConfig).map((month) => (
@@ -39,7 +47,7 @@ export default async function List({ handleClick }: ListProps) {
             {calendarConfig[month].map((tour) => (
               <Link
                 href={`/${tour.id}`}
-                onClick={() => handleClick(tour.id)}
+                onClick={() => onClickTour(tour.id)}
                 className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-100"
                 key={tour.id}
               >
