@@ -1,16 +1,40 @@
+'use client';
+
+import { getFilters, useFilters } from '@/app/entities/filters';
 import { Tour } from '../types/tour';
-// import db from '../../../db.json';
+import db from '../../../db.json';
+import { filterTours } from '../lib/filterTours';
+import { sortTours } from '../lib/sortTours';
+import { stringifyOrder } from '../lib/query';
 
-export const useTours = async (): Promise<Tour[]> => {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/tours');
+export const useTours = ({
+  applyFilters,
+}: {
+  applyFilters?: boolean;
+}): Tour[] => {
+  const { orderBy: sortBy, categories } = useFilters(getFilters);
 
-  return res.json();
-  // return db.tours;
+  if (!applyFilters) {
+    return db.tours;
+  }
+
+  const orderType = 'asc';
+
+  const { tours } = db;
+
+  const filteredTours = filterTours(tours, categories);
+
+  const sortedTours = sortBy
+    ? sortTours(filteredTours, stringifyOrder(sortBy) as keyof Tour, orderType)
+    : filteredTours;
+
+  return sortedTours;
 };
 
-export const useTourById = async (id: string): Promise<Tour> => {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/tours/' + id);
+export const useTourById = (id: string): Tour => {
+  const { tours } = db;
 
-  return res.json();
-  // return db.tours[0];
+  const findTour = tours.find((i) => i.id === Number(id));
+
+  return findTour ?? tours[0];
 };
