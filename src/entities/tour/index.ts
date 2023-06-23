@@ -1,3 +1,12 @@
-import { Tour, TourKeys, Calendar, CalendarItem } from './types/tour.d';
+import { useTours, useTourById } from './api/useTours';
+import { Tour, TourId, TourKeys, Calendar, CalendarItem } from './types/tour.d';
 
-export { type Tour, type TourKeys, type Calendar, type CalendarItem };
+export {
+  type Tour,
+  type TourKeys,
+  type TourId,
+  type Calendar,
+  type CalendarItem,
+  useTourById,
+  useTours,
+};
