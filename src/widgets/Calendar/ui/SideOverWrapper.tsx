@@ -13,7 +13,7 @@ export default function SideOverWrapper({
   children,
   show,
   onHide,
-  icon
+  icon,
 }: SideOverWrapperProps) {
   return (
     <div className="block md:hidden">
@@ -41,7 +41,7 @@ export default function SideOverWrapper({
           <ChevronLeftIcon className="h-5 w-5" />
         </button>
 
-        <div className="z-10 rounded-md bg-gray-50 px-2">
+        <div className="z-10 rounded-md bg-gray-100 px-2">
           <h1 className="ml-3 text-lg font-semibold capitalize leading-6 text-primary-900">
             Календар
           </h1>

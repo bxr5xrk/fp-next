@@ -1,14 +1,14 @@
 'use client';
 
-import { useTourById } from '@/entities/tour/api/useTours';
+import { useTourById } from '@/entities/tour';
 import { getStats } from '@/shared/lib/getStats';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-export default async function Stats() {
+export default function Stats() {
   const { id } = useParams();
 
-  const tour = await useTourById(id);
+  const tour = useTourById(id);
 
   const stats = getStats(tour);
 

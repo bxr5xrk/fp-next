@@ -19,13 +19,12 @@ export default function Calendar() {
     }
 
     setScrollPermission(true);
-    router.push(`/${id}`);
+    router.push(`/tours/${id}`);
   };
 
   return (
     <>
       <SideWrapper>
-        {/* @ts-expect-error Server Component */}
         <List handleClick={handleClickTour} />
       </SideWrapper>
 
@@ -46,7 +45,6 @@ export default function Calendar() {
           setShowSideOver(false);
         }}
       >
-        {/* @ts-expect-error Server Component */}
         <List handleClick={handleClickTour} />
       </SideOverWrapper>
     </>

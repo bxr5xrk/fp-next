@@ -1,8 +1,10 @@
+'use client';
+
 import { useTours } from '../api/useTours';
 import TourItem from './TourItem';
 
-export default async function TourList() {
-  const tours = await useTours();
+export default function TourList() {
+  const tours = useTours({ applyFilters: true });
 
   return tours ? (
     <ul className="grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">

@@ -1,36 +1,22 @@
 'use client';
 
-import { Calendar, Tour } from '@/entities/tour';
-import { useTours } from '@/entities/tour/api/useTours';
+import { TourId } from '@/entities/tour';
+import { useTours } from '@/entities/tour';
 import { formatDate } from '@/shared/lib';
 import { smoothScroll } from '@/shared/lib/smoothScroll';
 import Link from 'next/link';
-import { groupEventsByMonth } from '../lib/groupEventsByMonth';
+import { getCalendarConfig } from '../lib/getCalendarConfig';
 
 interface ListProps {
   handleClick: (i: number) => void;
 }
 
-const getCalendarConfig = (tours: Tour[]): Calendar => {
-  const sortedTours = tours
-    ? [...tours].sort((a, b) => a.start_date.localeCompare(b.start_date))
-    : [];
-
-  return groupEventsByMonth(
-    sortedTours.map((i) => ({
-      start_date: i.start_date,
-      id: i.id,
-      title: i.title,
-    }))
-  );
-};
-
-export default async function List({ handleClick }: ListProps) {
-  const tours = await useTours();
+export default function List({ handleClick }: ListProps) {
+  const tours = useTours({ applyFilters: false });
 
   const calendarConfig = getCalendarConfig(tours);
 
-  const onClickTour = (id: Pick<Tour, 'id'>['id']) => {
+  const onClickTour = (id: TourId) => {
     handleClick(id);
     smoothScroll();
   };
@@ -46,9 +32,9 @@ export default async function List({ handleClick }: ListProps) {
           <div className="ml-3">
             {calendarConfig[month].map((tour) => (
               <Link
-                href={`/${tour.id}`}
+                href={`/tours/${tour.id}`}
                 onClick={() => onClickTour(tour.id)}
-                className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-100"
+                className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-200"
                 key={tour.id}
               >
                 <p className="text-gray-500">{formatDate(tour.start_date)}</p>
