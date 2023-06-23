@@ -1,5 +1,5 @@
 export interface Tour {
-  id: number;
+  id: TourId;
   title: string;
   extended_title: string;
   price: number;
@@ -11,6 +11,8 @@ export interface Tour {
   categories: string[];
   attractions: string;
 }
+
+export type TourId = number;
 
 export type TourKeys = keyof Tour;
 
