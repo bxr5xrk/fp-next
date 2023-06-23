@@ -15,7 +15,6 @@ export default async function HomePage() {
           <SortingMenu />
         </div>
 
-        {/* @ts-expect-error Server Component */}
         <TourList />
       </div>
     </section>
