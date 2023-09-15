@@ -6,9 +6,9 @@ function compareValues(a: Tour, b: Tour, sortBy: TourKey, orderType: string) {
   const valueB = b[sortBy];
 
   if (valueA > valueB) {
-    comparison = 1;
-  } else if (valueA < valueB) {
     comparison = -1;
+  } else if (valueA < valueB) {
+    comparison = 1;
   }
 
   return orderType === 'desc' ? comparison * -1 : comparison;

@@ -27,7 +27,7 @@ export default function TourItem({
   date,
 }: ToursItemProps) {
   return (
-    <li className="group grid">
+    <li className="group flex flex-col gap-1">
       <Link onClick={smoothScroll} href={`/tours/${id}`}>
         <div className="relative block h-48 w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-primary-700 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Image
@@ -48,7 +48,7 @@ export default function TourItem({
         </p>
       </Link>
 
-      <p className="block py-2 text-sm font-medium text-gray-700">{`${formatDate(
+      <p className="block py-1 text-sm font-medium text-gray-700">{`${formatDate(
         date.start
       )} - ${formatDate(date.end)}`}</p>
 

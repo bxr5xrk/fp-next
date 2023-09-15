@@ -4,6 +4,8 @@ import { useTourById } from '@/entities/tour';
 import { getStats } from '@/shared/lib/getStats';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import { Fragment } from 'react';
+import { cl } from './lib';
 
 export default function Stats() {
   const { id } = useParams();
@@ -60,12 +62,23 @@ export default function Stats() {
 
       {/* description */}
       <div className="space-y-5">
-        {tour.description.split('[split]').map((sentence) => (
-          <p key={sentence} className="mt-4 indent-4 text-gray-500">
-            {sentence}
-          </p>
-        ))}
+        {renderSentence(tour.description)}
       </div>
     </>
   );
+}
+
+function renderSentence(sentence: string) {
+  return (
+    <>
+      {sentence.split("/br2").map((root, idx1) => (
+        <div className={cl("pt-4 text-gray-500")} key={idx1}>{root.split("/br1").map((block, idx2) => (
+          <div className='pt-3' key={idx2}>{block.split("/br").map((sentence, index) => (
+            <p className={`text-gray-500`} key={index}>{sentence.trim()}<br /></p>
+          ))}</div>
+        ))}</div>
+      ))}
+
+    </>
+  )
 }

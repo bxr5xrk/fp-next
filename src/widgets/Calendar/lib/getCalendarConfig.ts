@@ -3,7 +3,7 @@ import { groupEventsByMonth } from './groupEventsByMonth';
 
 export const getCalendarConfig = (tours: Tour[]): Calendar => {
   const sortedTours = tours
-    ? [...tours].sort((a, b) => a.start_date.localeCompare(b.start_date))
+    ? [...tours].sort((a, b) => b.start_date.localeCompare(a.start_date))
     : [];
 
   return groupEventsByMonth(
