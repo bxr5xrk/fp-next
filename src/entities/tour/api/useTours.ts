@@ -1,6 +1,6 @@
 'use client';
 
-import { getFilters, useFilters } from '@/app/entities/filters';
+import { getFilters, useFilters } from '@/entities/filters';
 import { Tour } from '../types/tour';
 import db from '../../../db.json';
 import { filterTours } from '../lib/filterTours';
@@ -31,7 +31,7 @@ export const useTours = ({
   return sortedTours;
 };
 
-export const useTourById = (id: string): Tour => {
+export const useTourById = (id: string | null): Tour => {
   const { tours } = db;
 
   const findTour = tours.find((i) => i.id === Number(id));

@@ -1,16 +1,13 @@
-import { Calendar, Tour } from '@/entities/tour';
+import { Calendar } from '@/entities/tour';
 import { groupEventsByMonth } from './groupEventsByMonth';
+import { Tour } from '../ui/Calendar';
 
 export const getCalendarConfig = (tours: Tour[]): Calendar => {
   const sortedTours = tours
-    ? [...tours].sort((a, b) => b.start_date.localeCompare(a.start_date))
+    ? [...tours].sort((a, b) => b.startDate.localeCompare(a.startDate))
     : [];
 
   return groupEventsByMonth(
-    sortedTours.map((i) => ({
-      start_date: i.start_date,
-      id: i.id,
-      title: i.title,
-    }))
+    sortedTours
   );
 };

@@ -1,5 +1,5 @@
 import { useTours, useTourById } from './api/useTours';
-import { Tour, TourId, TourKeys, Calendar, CalendarItem } from './types/tour.d';
+import { Tour, TourId, TourKeys, Calendar, CalendarItem } from './types/tour';
 
 export {
   type Tour,

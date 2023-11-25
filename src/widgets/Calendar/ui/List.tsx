@@ -1,25 +1,14 @@
-'use client';
-
-import { TourId } from '@/entities/tour';
-import { useTours } from '@/entities/tour';
 import { formatDate } from '@/shared/lib';
-import { smoothScroll } from '@/shared/lib/smoothScroll';
 import Link from 'next/link';
 import { getCalendarConfig } from '../lib/getCalendarConfig';
+import { Tour } from './Calendar';
 
 interface ListProps {
-  handleClick: (i: number) => void;
+  tours: Tour[];
 }
 
-export default function List({ handleClick }: ListProps) {
-  const tours = useTours({ applyFilters: false });
-
+export default function List({ tours }: ListProps) {
   const calendarConfig = getCalendarConfig(tours);
-
-  const onClickTour = (id: TourId) => {
-    handleClick(id);
-    smoothScroll();
-  };
 
   return (
     <ul className="flex flex-col divide-y overflow-hidden">
@@ -32,12 +21,11 @@ export default function List({ handleClick }: ListProps) {
           <div className="ml-3">
             {calendarConfig[month].map((tour) => (
               <Link
-                href={`/tours/${tour.id}`}
-                onClick={() => onClickTour(tour.id)}
+                href={`/tours/${tour.slug}`}
                 className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-200"
-                key={tour.id}
+                key={tour.slug}
               >
-                <p className="text-gray-500">{formatDate(tour.start_date)}</p>
+                <p className="text-gray-500">{formatDate(tour.startDate)}</p>
                 <p className="truncate font-medium text-gray-900">
                   {tour.title}
                 </p>

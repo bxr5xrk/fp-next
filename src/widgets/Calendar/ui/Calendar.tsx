@@ -1,34 +1,30 @@
-'use client';
-
-import { setScrollPermission } from '@/shared/setScrollPermission';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import List from './List';
-import SideOverWrapper from './SideOverWrapper';
 import SideWrapper from './SideWrapper';
-import Toggle from './Toggle';
+import sanity from '@/shared/lib/sanity';
 
-export default function Calendar() {
-  const router = useRouter();
+export async function Calendar(): Promise<JSX.Element> {
+  const tours = await getData();
 
-  const [showSideOver, setShowSideOver] = useState(false);
+  // const router = useRouter();
 
-  const handleClickTour = (id: number) => {
-    if (showSideOver) {
-      setShowSideOver(false);
-    }
+  // const [showSideOver, setShowSideOver] = useState(false);
 
-    setScrollPermission(true);
-    router.push(`/tours/${id}`);
-  };
+  // const handleClickTour = (id: number) => {
+  //   if (showSideOver) {
+  //     setShowSideOver(false);
+  //   }
+
+  //   setScrollPermission(true);
+  //   router.push(`/tours/${id}`);
+  // };
 
   return (
     <>
       <SideWrapper>
-        <List handleClick={handleClickTour} />
+        <List tours={tours} />
       </SideWrapper>
 
-      <SideOverWrapper
+      {/* <SideOverWrapper
         show={showSideOver}
         icon={
           !showSideOver ? (
@@ -46,7 +42,23 @@ export default function Calendar() {
         }}
       >
         <List handleClick={handleClickTour} />
-      </SideOverWrapper>
+      </SideOverWrapper> */}
     </>
   );
+}
+
+export interface Tour {
+  slug: string;
+  startDate: string;
+  title: string
+}
+
+async function getData(): Promise<Tour[]> {
+  const data = await sanity.fetch<Tour[]>(`*[_type == "tour"] {
+    "title": title.short,
+    "startDate": dates.start,
+    "slug": slug.current
+  }`);
+
+  return data;
 }

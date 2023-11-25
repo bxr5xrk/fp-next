@@ -4,13 +4,12 @@ import { useTourById } from '@/entities/tour';
 import { getStats } from '@/shared/lib/getStats';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { Fragment } from 'react';
 import { cl } from './lib';
 
 export default function Stats() {
   const { id } = useParams();
 
-  const tour = useTourById(id);
+  const tour = useTourById(typeof id === "string" ? id : null);
 
   const stats = getStats(tour);
 

@@ -19,4 +19,8 @@ export type TourKeys = keyof Tour;
 export interface CalendarItem
   extends Pick<Tour, 'start_date' | 'id' | 'title'> {}
 
-export type Calendar = Record<string, CalendarItem[]>;
+export type Calendar = Record<string, {
+  slug: string;
+  title: string;
+  startDate: string;
+}[]>;
