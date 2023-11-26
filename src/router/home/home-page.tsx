@@ -1,6 +1,6 @@
 import { TourList } from "@/entities/tour";
-import { Categories } from "@/features/categories";
-import { Sorting } from "@/features/sorting";
+import { Categories } from "@/features/Categories";
+import { Sorting } from "@/features/Sorting";
 import { Calendar } from "@/widgets/calendar";
 
 interface HomePageProps {
