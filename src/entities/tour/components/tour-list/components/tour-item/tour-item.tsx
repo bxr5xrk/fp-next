@@ -1,5 +1,5 @@
 import { formatDate } from "@/shared/lib";
-import { Badge } from "@/shared/ui/Badge";
+import { Badge } from "@/shared/components/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { Tour } from "../../types";
@@ -39,7 +39,7 @@ export function TourItem(props: TourItemProps): JSX.Element {
 
       <div className="mt-2 flex flex-wrap gap-2">
         {categories.map((i) => (
-          <Badge key={i} title={i} />
+          <Badge key={i.slug} title={i.name} />
         ))}
       </div>
     </Link>

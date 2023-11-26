@@ -9,5 +9,8 @@ export interface Tour {
     start: string;
     end: string;
   }
-  categories: string[];
+  categories: {
+    slug: string;
+    name: string;
+  }[];
 }

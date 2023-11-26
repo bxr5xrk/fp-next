@@ -1,9 +1,13 @@
 import { TourList } from "@/entities/tour";
-import { Categories } from "@/features/Categories";
+import { Categories } from "@/features/categories";
 import { SortingMenu } from "@/features/Sorting";
 import { Calendar } from "@/widgets/calendar";
 
-export function HomePage() {
+interface HomePageProps {
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export function HomePage({ searchParams }: HomePageProps) {
   return (
     <section className="flex">
       <Calendar />
@@ -15,7 +19,7 @@ export function HomePage() {
           <SortingMenu />
         </div>
 
-        <TourList />
+        <TourList searchParams={searchParams} />
       </div>
     </section>
   );

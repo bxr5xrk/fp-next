@@ -2,23 +2,25 @@ import { cl } from '@/shared/lib/cl';
 
 interface BadgeProps {
   title: string;
-  onClick?: () => void;
   isActive?: boolean;
+  onClick?: VoidFunction;
 }
 
-export default function Badge({ title, onClick, isActive }: BadgeProps) {
+export function Badge(props: BadgeProps) {
+  const { title, isActive, onClick } = props;
+
   return (
-    <button
+    <span
       onClick={onClick}
       className={cl(
         isActive
           ? 'bg-primary-800 text-primary-100 hover:bg-primary-900 hover:text-primary-200'
           : 'bg-primary-100 text-primary-800 hover:bg-primary-200 hover:text-primary-900',
-        onClick ? 'cursor-pointer' : 'cursor-text', // if clickable add pointer
-        'inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium transition'
+          onClick ? 'cursor-pointer' : 'cursor-text', // if clickable add pointer
+        'inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition'
       )}
     >
       {title}
-    </button>
+    </span>
   );
 }
