@@ -5,6 +5,14 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    screens: {
+      "xxs": '390px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     colors: {
       primary: {
         50: '#f8f6f4',
