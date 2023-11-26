@@ -17,7 +17,7 @@ export default function SelectMenu(props: SelectMenuProps) {
   const { label, id, options, onChange, defaultValue } = props;
 
   return (
-    <div className="flex items-center justify-center gap-3 w-fit">
+    <div className="flex flex-col xxs:flex-row items-start xxs:items-center justify-center gap-1 xxs:gap-3 w-fit">
       <label
         htmlFor={id}
         className="block whitespace-nowrap text-sm font-medium leading-6 text-gray-900"

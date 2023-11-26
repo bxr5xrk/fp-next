@@ -20,17 +20,13 @@ export async function TourInfo({ slug }: TourInfoProps) {
         <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           {title.long}
         </p>
-        <div className='flex gap-1 items-start mt-4 mx-auto w-fit'>
-          {attractions.map((attraction, index) => (
-            <p key={index} className="text-gray-500 capitalize">{attraction}{index === attractions.length - 1 ? "." : ","}</p>
-          ))}
-        </div>
+        <p className="text-gray-500 capitalize mx-auto w-fit mt-4">{attractions.map((attraction, index) => `${attraction}${index === attractions.length - 1 ? "." : ","} `)}</p>
       </div>
 
       <Stats tour={tour} />
 
       {/* images */}
-      <div className="my-8 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+      <div className="my-8 grid grid-cols-1 gap-y-6 md:gap-y-16 lg:grid-cols-2 lg:gap-x-8">
         {images.map((image, index) => (
           <div
             key={index}

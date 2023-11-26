@@ -53,7 +53,7 @@ export async function TourList({ searchParams }: TourListProps) {
   const tours = await getData(categories, sorting);
 
   return (
-    <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
       {tours.map((tour) => (
         <TourItem key={tour.slug} {...tour} />
       ))}

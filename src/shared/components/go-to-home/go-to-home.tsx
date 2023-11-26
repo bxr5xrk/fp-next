@@ -1,10 +1,16 @@
 "use client";
 
+import { setScrollPermission } from '@/shared/setScrollPermission';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export function GoToHome() {
   const router = useRouter();
+
+  useEffect(() => {
+    setScrollPermission(true);
+  }, []);
 
   return (
     <span onClick={() => router.back()} className="inline-block cursor-pointer">

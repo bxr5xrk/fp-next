@@ -1,20 +1,16 @@
 import { cl } from '@/shared/lib/cl';
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
-interface SideOverWrapperProps {
-  children: ReactNode;
+interface ContainerProps {
   show: boolean;
   onHide: VoidFunction;
   icon: ReactNode;
 }
 
-export default function SideOverWrapper({
-  children,
-  show,
-  onHide,
-  icon,
-}: SideOverWrapperProps) {
+export function Container(props: PropsWithChildren<ContainerProps>) {
+  const { children, show, onHide, icon } = props;
+
   return (
     <div className="block md:hidden">
       {icon}
@@ -22,7 +18,7 @@ export default function SideOverWrapper({
       <div
         onClick={onHide}
         className={cl(
-          'fixed inset-0 z-10 bg-black opacity-50 duration-200 ease-in-out lg:invisible',
+          'fixed inset-0 z-10 bg-black opacity-50 duration-100 ease-in-out lg:invisible',
           show ? 'visible' : 'invisible'
         )}
       ></div>
@@ -30,7 +26,7 @@ export default function SideOverWrapper({
       <div
         className={cl(
           show ? 'visible opacity-100' : 'invisible opacity-0',
-          'fixed inset-2 z-20 space-y-2 overflow-y-scroll rounded-lg bg-gray-50 p-2 duration-300 ease-in-out sm:p-4'
+          'fixed inset-2 z-20 space-y-2 overflow-y-scroll rounded-lg bg-gray-100 p-2 duration-300 ease-in-out sm:p-4'
         )}
       >
         <button

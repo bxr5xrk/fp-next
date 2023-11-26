@@ -20,24 +20,24 @@ export function TourItem(props: TourItemProps): JSX.Element {
           height={200}
           src={image}
           alt={title.short}
-          className="pointer-events-none h-48 w-full transform object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+          className="pointer-events-none h-48 w-full transform object-cover group-hover:scale-105 transition-all duration-300 ease-in-out object-center"
         />
         <button type="button" className="absolute inset-0 focus:outline-none">
           <span className="sr-only">View details for {title.short}</span>
         </button>
       </div>
 
-      <p className="block py-1 text-sm font-medium text-gray-700">{`${formatDate(
+      <p className="block pt-2 text-sm font-medium text-gray-700">{`${formatDate(
         dates.start
       )} - ${formatDate(dates.end)}`}</p>
 
-      <p className="mt-2 block truncate text-sm font-medium text-gray-900">
+      <p className="pt-2 block truncate text-sm font-medium text-gray-900">
         {title.short}
       </p>
 
-      <p className="text-sm font-medium text-gray-500 line-clamp-2">{title.long}</p>
+      <p className="py-2 text-sm font-medium text-gray-500 line-clamp-2">{title.long}</p>
 
-      <div className="mt-2 flex flex-wrap gap-2">
+      <div className="flex flex-wrap h-auto max-h-16 gap-2 overflow-hidden">
         {categories.map((i) => (
           <Badge key={i.slug} title={i.name} />
         ))}

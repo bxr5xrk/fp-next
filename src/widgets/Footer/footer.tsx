@@ -16,8 +16,8 @@ export async function Footer(): Promise<JSX.Element> {
 
   return (
     <footer className="mx-auto w-full space-y-4 overflow-hidden border-t p-2">
-      <div className="flex flex-col flex-wrap items-start justify-between gap-4 pt-2 sm:flex-row lg:gap-0">
-        <section className="flex flex-grow flex-col gap-4">
+      <div className="flex flex-col flex-wrap items-start justify-between gap-4 pt-2 sm:flex-row lg:gap-0 w-full">
+        <section className="items-center flex flex-grow justify-center xxs:justify-between flex-wrap gap-4 w-full">
           <h3 className="font-semibold text-primary-600">
             #Ми знаємо напрямок
           </h3>
@@ -45,31 +45,31 @@ export async function Footer(): Promise<JSX.Element> {
         </section>
 
         <div className="flex w-full flex-col justify-between gap-5 whitespace-nowrap sm:flex-row sm:gap-20 lg:w-fit">
-          <section className="space-y-3 text-sm leading-6">
-            <Link href="https://maps.app.goo.gl/cuVNmNbtHu8rEnDg6" className="flex items-center gap-x-2 text-gray-600">
-              <dt className="flex-none">
+          <section className="space-y-3 text-sm leading-6 mx-auto xxs:mx-0">
+            <Link href="https://maps.app.goo.gl/cuVNmNbtHu8rEnDg6" className="flex items-center gap-x-2 text-gray-600 mx-auto xxs:mx-0">
+              <div className="flex-none">
                 <span className="sr-only">Address</span>
                 <BuildingOffice2Icon className="h-5 w-5" aria-hidden="true" />
-              </dt>
-              <dd>
+              </div>
+              <div>
                 <p className="whitespace-normal hover:text-gray-900">
                   {address}
                 </p>
-              </dd>
+              </div>
             </Link>
 
-            <div className="flex items-center gap-x-2 text-gray-600">
-              <dt className="flex-none">
+            <div className="flex items-center gap-x-2 text-gray-600 mx-auto w-fit xxs:mx-0">
+              <div className="flex-none">
                 <span className="sr-only">Name</span>
                 <UserIcon className="h-5 w-5" aria-hidden="true" />
-              </dt>
-              <dd>
+              </div>
+              <div>
                 <p className="hover:text-gray-900">{name}</p>
-              </dd>
+              </div>
             </div>
 
             <Link
-              className="flex items-center gap-2 text-sm leading-6 text-slate-700 transition hover:text-gray-900"
+              className="flex items-center gap-2 text-sm leading-6 text-slate-700 transition hover:text-gray-900 w-fit mx-auto xxs:mx-0"
               href={`mailto:${email}`}
             >
               <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
@@ -77,7 +77,7 @@ export async function Footer(): Promise<JSX.Element> {
             </Link>
           </section>
 
-          <section className="space-y-3">
+          <section className="space-y-3 mx-auto w-fit xxs:mx-0">
             {phones.map((phone, index) => (
               <Link
                 className="flex items-center gap-2 text-sm leading-6 text-slate-700 transition hover:text-gray-900"

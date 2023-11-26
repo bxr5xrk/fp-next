@@ -13,9 +13,9 @@ export function Header(): JSX.Element {
           <h1 className="text-base font-bold md:text-xl">
             Франківський Паломник
           </h1>
-          <h3 className="font-medium text-primary-700 md:font-semibold">
+          <h2 className="font-medium text-primary-700 md:font-semibold">
             #Ми знаємо напрямок
-          </h3>
+          </h2>
         </div>
       </Link>
 

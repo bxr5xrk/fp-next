@@ -1,22 +1,10 @@
 import sanity from '@/shared/lib/sanity';
 import { List } from './components/list';
 import { Tour } from './types';
+import { CalendarDialog } from './components/calendar-dialog';
 
 export async function Calendar(): Promise<JSX.Element> {
   const tours = await getData();
-
-  // const router = useRouter();
-
-  // const [showSideOver, setShowSideOver] = useState(false);
-
-  // const handleClickTour = (id: number) => {
-  //   if (showSideOver) {
-  //     setShowSideOver(false);
-  //   }
-
-  //   setScrollPermission(true);
-  //   router.push(`/tours/${id}`);
-  // };
 
   return (
     <>
@@ -24,25 +12,9 @@ export async function Calendar(): Promise<JSX.Element> {
         <List tours={tours} />
       </div>
 
-      {/* <SideOverWrapper
-        show={showSideOver}
-        icon={
-          !showSideOver ? (
-            <Toggle
-              onClick={() => {
-                setScrollPermission(false);
-                setShowSideOver(true);
-              }}
-            />
-          ) : null
-        }
-        onHide={() => {
-          setScrollPermission(true);
-          setShowSideOver(false);
-        }}
-      >
-        <List handleClick={handleClickTour} />
-      </SideOverWrapper> */}
+      <CalendarDialog>
+        <List tours={tours} />
+      </CalendarDialog>
     </>
   );
 }
