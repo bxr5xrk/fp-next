@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-export async function Footer(): Promise<JSX.Element> {
+export default async function Footer(): Promise<JSX.Element> {
   const data = await getData();
   const { socialMedia, name, email, phones, address } = data;
 
