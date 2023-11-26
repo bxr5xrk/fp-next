@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField } from 'sanity'
+import { defineField } from 'sanity';
 
 export const footer = defineField({
   name: 'footer',
@@ -66,4 +66,4 @@ export const footer = defineField({
       ]
     })
   ],
-})
+});

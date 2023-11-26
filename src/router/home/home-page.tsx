@@ -1,9 +1,9 @@
-import { TourList } from "@/entities/tour/ui/tour-list";
+import { TourList } from "@/entities/tour";
 import { Categories } from "@/features/Categories";
 import { SortingMenu } from "@/features/Sorting";
-import { Calendar } from "@/widgets/Calendar";
+import { Calendar } from "@/widgets/calendar";
 
-export async function HomePage() {
+export function HomePage() {
   return (
     <section className="flex">
       <Calendar />
