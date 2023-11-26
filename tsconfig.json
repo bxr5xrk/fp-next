@@ -22,10 +22,6 @@
     "paths": {
       "@/*": ["./src/*"],
       "@platform/*": ["./platform/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@/widgets/*": ["./src/widgets/*"],
-      "@/entities/*": ["./src/entities/*"],
-      "@/features/*": ["./src/features/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
