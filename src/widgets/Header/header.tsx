@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Header(): JSX.Element {
+export function Header(): JSX.Element {
   return (
     <header className="flex w-full items-center justify-between border-b pb-2">
       <Link href="/" className="flex items-center gap-3">

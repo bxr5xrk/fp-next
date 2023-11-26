@@ -1,6 +1,8 @@
 import '../globals.css';
 import { Inter } from 'next/font/google';
 import { cl } from '@/shared/lib';
+import { Header } from '@/widgets/header';
+import { Footer } from '@/widgets/footer';
 
 const inter = Inter({ subsets: ['cyrillic'] });
 
@@ -27,11 +29,11 @@ export default function RootLayout({
           'flex min-h-screen flex-col mx-auto max-w-7xl p-2 overflow-x-hidden overflow-y-scroll'
         )}
       >
-        {/* <Header /> */}
+        <Header />
 
         <main className="w-full h-full p-4 relative flex-grow">{children}</main>
-{/* 
-        <Footer /> */}
+
+        <Footer />
       </body>
     </html>
   );
