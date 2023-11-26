@@ -1,6 +1,6 @@
 import { TourList } from "@/entities/tour";
 import { Categories } from "@/features/categories";
-import { SortingMenu } from "@/features/Sorting";
+import { Sorting } from "@/features/sorting";
 import { Calendar } from "@/widgets/calendar";
 
 interface HomePageProps {
@@ -16,7 +16,7 @@ export function HomePage({ searchParams }: HomePageProps) {
         <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
           <Categories />
 
-          <SortingMenu />
+          <Sorting />
         </div>
 
         <TourList searchParams={searchParams} />
