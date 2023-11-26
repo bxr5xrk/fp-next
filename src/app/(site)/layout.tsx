@@ -1,8 +1,8 @@
 import '../globals.css';
 import { Inter } from 'next/font/google';
 import { cl } from '@/shared/lib';
-import { Header } from '@/widgets/header';
-import { Footer } from '@/widgets/footer';
+import { Header } from './_widgets/header';
+import { Footer } from './_widgets/footer';
 
 const inter = Inter({ subsets: ['cyrillic'] });
 
