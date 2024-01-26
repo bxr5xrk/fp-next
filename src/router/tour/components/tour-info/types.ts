@@ -6,7 +6,7 @@ export interface Tour {
     short: string;
     long: string;
   };
-  attractions: string[];
+  attractions?: string[];
   content: PortableTextBlock;
   price: {
     UAH: number;

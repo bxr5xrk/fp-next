@@ -20,7 +20,7 @@ export async function TourInfo({ slug }: TourInfoProps) {
         <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           {title.long}
         </p>
-        <p className="text-gray-500 capitalize mx-auto w-fit mt-4">{attractions.map((attraction, index) => `${attraction}${index === attractions.length - 1 ? "." : ","} `)}</p>
+        {attractions?.length ? <p className="text-gray-500 capitalize mx-auto w-fit mt-4">{attractions.map((attraction, index) => `${attraction}${index === attractions.length - 1 ? "." : ","} `)}</p> : null}
       </div>
 
       <Stats tour={tour} />
