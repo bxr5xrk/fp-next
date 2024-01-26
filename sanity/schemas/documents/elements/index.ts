@@ -8,4 +8,4 @@ export const elements =  defineType({
   fields: [
     footer
   ],
-})
+});

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity';
 
 export const attraction = defineType({
   name: 'attraction',
@@ -22,4 +22,4 @@ export const attraction = defineType({
       validation: rule => rule.required(),
     }),
   ],
-})
+});

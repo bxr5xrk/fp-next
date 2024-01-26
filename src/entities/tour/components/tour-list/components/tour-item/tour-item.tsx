@@ -2,7 +2,7 @@ import { formatDate } from "@/shared/lib";
 import { Badge } from "@/shared/components/badge";
 import Image from "next/image";
 import Link from "next/link";
-import { Tour } from "../../types";
+import { Tour } from "@/entities/tour/types";
 
 interface TourItemProps extends Tour {
 

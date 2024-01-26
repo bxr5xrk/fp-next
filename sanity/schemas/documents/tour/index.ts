@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const tour = defineType({
   name: 'tour',
@@ -182,4 +182,4 @@ export const tour = defineType({
     //   return { ...selection, subtitle: author && slug && `by ${author}, link ${slug}` }
     // },
   },
-})
+});
