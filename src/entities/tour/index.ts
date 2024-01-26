@@ -1,1 +1,1 @@
-export * from './components/tour-list';
+export * from './components/tours';

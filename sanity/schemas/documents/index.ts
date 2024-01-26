@@ -8,4 +8,4 @@ export const documents = [
   category,
   tour,
   elements
-]
+];

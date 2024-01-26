@@ -1,11 +1,6 @@
 import { HomePage } from '@/router/home/home-page';
 import { Metadata } from 'next';
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://fp.if.ua"),
   title: "Франківський Паломник",
@@ -15,18 +10,16 @@ export const metadata: Metadata = {
     title: "Франківський Паломник",
     description: "Наші паломництва - це не лише відвідання цікавих місць",
     images: [
-        {
-            url: "/logo.png",
-            width: 40,
-            height: 40,
-            alt: "Франківський Паломник",
-        },
+      {
+        url: "/logo.png",
+        width: 40,
+        height: 40,
+        alt: "Франківський Паломник",
+      },
     ],
-}
+  }
 };
 
-export default function Page(props: Props): JSX.Element {
-  const { searchParams } = props;
-
-  return (<HomePage searchParams={searchParams} />);
+export default function Page(): JSX.Element {
+  return (<HomePage />);
 }

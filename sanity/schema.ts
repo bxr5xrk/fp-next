@@ -1,7 +1,7 @@
-import { type SchemaTypeDefinition } from 'sanity'
-import { documents } from './schemas/documents'
-import { common } from './schemas/common'
-import { pages } from './schemas/pages'
+import { type SchemaTypeDefinition } from 'sanity';
+import { documents } from './schemas/documents';
+import { common } from './schemas/common';
+import { pages } from './schemas/pages';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -9,4 +9,4 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     ...common,
     ...pages
   ],
-}
+};

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity';
 
 export const category = defineType({
   name: 'category',
@@ -22,4 +22,4 @@ export const category = defineType({
       validation: rule => rule.required(),
     }),
   ],
-})
+});
