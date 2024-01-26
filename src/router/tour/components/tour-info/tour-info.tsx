@@ -27,7 +27,7 @@ export async function TourInfo({ slug }: TourInfoProps) {
 
       {/* images */}
       <div className="my-8 grid grid-cols-1 gap-y-6 md:gap-y-16 lg:grid-cols-2 lg:gap-x-8">
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <div
             key={index}
             className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg"
