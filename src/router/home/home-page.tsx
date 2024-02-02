@@ -4,6 +4,7 @@ import { Sorting } from "@/features/Sorting";
 import { Calendar } from "@/widgets/calendar";
 import { Suspense } from "react";
 
+
 export function HomePage() {
   return (
     <section className="flex">
