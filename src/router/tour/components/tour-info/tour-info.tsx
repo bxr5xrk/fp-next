@@ -30,7 +30,7 @@ export async function TourInfo({ slug }: TourInfoProps) {
         {images?.map((image, index) => (
           <div
             key={index}
-            className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg"
+            className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg relative"
           >
             <Image
               priority
@@ -38,6 +38,7 @@ export async function TourInfo({ slug }: TourInfoProps) {
               alt={title.short}
               width={100}
               height={100}
+              quality={100}
               className="h-full w-full object-cover object-center"
             />
           </div>

@@ -31,11 +31,11 @@ export function TourItem(props: TourItemProps): JSX.Element {
         dates.start
       )} - ${formatDate(dates.end)}`}</p>
 
-      <p className="pt-2 block truncate text-sm font-medium text-gray-900">
+      <p className="pt-2 block truncate text-sm font-medium text-gray-900 line-clamp-2">
         {title.short}
       </p>
 
-      <p className="py-2 text-sm font-medium text-gray-500 line-clamp-2">{title.long}</p>
+      <p className="my-2 text-sm font-medium text-gray-500 line-clamp-2">{title.long}</p>
 
       <div className="flex flex-wrap h-auto max-h-16 gap-2 overflow-hidden">
         {categories.map((i) => (

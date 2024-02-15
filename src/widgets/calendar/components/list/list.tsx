@@ -21,8 +21,7 @@ export function List({ tours }: ListProps) {
           <div className="ml-3">
             {calendarConfig[month].map((tour) => (
               <Link
-                href={`/`}
-                // href={`/tours/${tour.slug}`}
+                href={`/tours/${tour.slug}`}
                 className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-200"
                 key={tour.slug}
               >

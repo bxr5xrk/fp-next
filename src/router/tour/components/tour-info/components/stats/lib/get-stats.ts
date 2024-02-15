@@ -12,10 +12,7 @@ export function getStats(tour: Tour): Stat[] {
   return [
     {
       name: 'Ціна',
-      value:
-        formatPrice(tour.price.USD, 'USD') +
-        ' + ' +
-        formatPrice(tour.price.UAH, 'UAH'),
+      value: `${formatPrice(tour.price.USD, 'USD')}${Boolean(tour.price.UAH) ? (' + ' + formatPrice(tour.price.UAH, 'UAH')) : ''}`,
     },
     {
       name: 'Тривалість',
