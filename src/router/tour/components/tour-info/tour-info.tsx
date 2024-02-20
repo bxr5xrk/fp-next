@@ -3,6 +3,7 @@ import { Tour } from "./types";
 import { Stats } from "./components/stats";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+import { portableTextComponents } from "@/shared/lib/sanity/portable-components";
 
 interface TourInfoProps {
   slug: string;
@@ -46,11 +47,8 @@ export async function TourInfo({ slug }: TourInfoProps) {
       </div>
 
       {/* description */}
-      <PortableText value={content} components={{
-        block: (data) => {
-          return <p className="text-gray-500 py-1">{data.children}</p>;
-        }
-      }}
+      <PortableText value={content}
+        components={portableTextComponents}
       />
     </>
   );
