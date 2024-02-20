@@ -12,12 +12,12 @@ export function TourItem(props: TourItemProps): JSX.Element {
   const { slug, image, title, dates, categories } = props;
 
   return (
-    <Link href={`/tours/${slug}`} className="group flex flex-col gap-1">
+    <Link href={`/${slug}`} className="group flex flex-col gap-1">
       <div className="relative block h-48 w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-primary-700 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
         <Image
           priority
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           src={image}
           alt={title.short}
           className="pointer-events-none h-48 w-full transform object-cover group-hover:scale-105 transition-all duration-300 ease-in-out object-center"

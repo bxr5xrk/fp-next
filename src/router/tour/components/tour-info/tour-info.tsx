@@ -17,9 +17,9 @@ export async function TourInfo({ slug }: TourInfoProps) {
       {/* header */}
       <div className="text-center">
         <h2 className="font-medium text-gray-500">{title.short}</h2>
-        <p className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           {title.long}
-        </p>
+        </h1>
         {attractions?.length ? <p className="text-gray-500 capitalize mx-auto w-fit mt-4">{attractions.map((attraction, index) => `${attraction}${index === attractions.length - 1 ? "." : ","} `)}</p> : null}
       </div>
 
@@ -36,8 +36,8 @@ export async function TourInfo({ slug }: TourInfoProps) {
               priority
               src={image}
               alt={title.short}
-              width={100}
-              height={100}
+              width={500}
+              height={500}
               quality={100}
               className="h-full w-full object-cover object-center"
             />
