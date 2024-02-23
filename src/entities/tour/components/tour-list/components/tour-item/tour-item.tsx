@@ -38,7 +38,7 @@ export function TourItem(props: TourItemProps): JSX.Element {
       <p className="my-2 text-sm font-medium text-gray-500 line-clamp-2">{title.long}</p>
 
       <div className="flex flex-wrap h-auto max-h-16 gap-2 overflow-hidden">
-        {categories.map((i) => (
+        {categories?.map((i) => (
           <Badge key={i.slug} title={i.name} />
         ))}
       </div>
