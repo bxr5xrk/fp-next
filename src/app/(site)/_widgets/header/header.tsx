@@ -14,7 +14,7 @@ export function Header(): JSX.Element {
             Франківський Паломник
           </h1>
           <h2 className="font-medium text-primary-700 md:font-semibold">
-            #Ми знаємо напрямок
+            #Ми_знаємо_напрямок
           </h2>
         </div>
       </Link>

@@ -21,5 +21,10 @@ export const category = defineType({
       },
       validation: rule => rule.required(),
     }),
+    defineField({
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+    })
   ],
 });

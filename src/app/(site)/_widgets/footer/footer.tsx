@@ -19,7 +19,7 @@ export async function Footer(): Promise<JSX.Element> {
       <div className="flex flex-col flex-wrap items-start justify-between gap-4 pt-2 sm:flex-row lg:gap-0 w-full">
         <section className="items-center flex flex-grow justify-center xxs:justify-between flex-wrap gap-4 w-full">
           <h3 className="font-semibold text-primary-600">
-            #Ми знаємо напрямок
+            #Ми_знаємо_напрямок
           </h3>
 
           <div className="ml-1 flex space-x-5">

@@ -4,6 +4,7 @@ import { Stats } from "./components/stats";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { portableTextComponents } from "@/shared/lib/sanity/portable-components";
+import { ScrollToUp } from "@/shared/ui/scroll-to-up";
 
 interface TourInfoProps {
   slug: string;
@@ -50,6 +51,7 @@ export async function TourInfo({ slug }: TourInfoProps) {
       <PortableText value={content}
         components={portableTextComponents}
       />
+      <ScrollToUp />
     </>
   );
 }

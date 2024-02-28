@@ -15,7 +15,7 @@ interface Category {
 }
 
 async function getData(): Promise<Category[]> {
-  const data = await sanity.fetch<Category[]>(`*[_type == "category"] {
+  const data = await sanity.fetch<Category[]>(`*[_type == "category"] | order(order asc) {
     name,
     "slug": slug.current
   }`);

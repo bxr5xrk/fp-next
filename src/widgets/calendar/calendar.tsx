@@ -23,6 +23,7 @@ async function getData(): Promise<Tour[]> {
   const data = await sanity.fetch<Tour[]>(`*[_type == "tour"] {
     "title": title.short,
     "startDate": dates.start,
+    "endDate": dates.end,
     "slug": slug.current
   }`);
 

@@ -1,6 +1,7 @@
 export interface Tour {
   slug: string;
   startDate: string;
+  endDate: string;
   title: string
 }
 

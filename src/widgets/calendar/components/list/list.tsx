@@ -25,7 +25,7 @@ export function List({ tours }: ListProps) {
                 className="flex w-full flex-col space-y-1 rounded-md p-2 hover:bg-gray-200"
                 key={tour.slug}
               >
-                <p className="text-gray-600">{formatDate(tour.startDate)}</p>
+                <p className="text-gray-600">{formatDate(tour.startDate)} - {formatDate(tour.endDate)}</p>
                 <p className="truncate font-medium text-gray-900">
                   {tour.title}
                 </p>
