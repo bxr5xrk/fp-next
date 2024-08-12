@@ -1,5 +1,6 @@
 'use client'; // Error components must be Client Components
  
+import { redirect } from 'next/navigation';
 import { useEffect } from 'react';
  
 export default function Error({
@@ -12,9 +13,5 @@ export default function Error({
     console.error(error);
   }, [error]);
  
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-    </div>
-  );
+  return redirect('/'); // Redirect to the home page
 }

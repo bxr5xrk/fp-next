@@ -9,9 +9,10 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
 
-  const data = await getSEOData(slug);
+  const data = await getSEOData(decodeURIComponent(slug));
 
   return {
+    metadataBase: new URL("https://fp.if.ua"),
     title: data.title.short,
     description: data.title.long,
     keywords: "паломництво, паломник, паломництва, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України, паломництво зі Львова, паломництво з Івано-Франківська, паломництво з України",
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function Page({ params }: Props) {
+
   return (
-    <TourPage slug={params.slug} />
+    <TourPage slug={decodeURIComponent(params.slug)} />
   );
 }
 
