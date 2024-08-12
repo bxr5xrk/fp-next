@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://fp.if.ua
-
-# Sitemaps
-Sitemap: https://fp.if.ua/sitemap.xml
